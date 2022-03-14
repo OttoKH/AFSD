@@ -28,5 +28,5 @@ sudo rm -rf LCD-show
 git clone https://github.com/goodtft/LCD-show.git
 sudo chmod -R 755 LCD-show
 cd LCD-show/
-sudo ./MPI3050-show 270
+sudo ./MPI3508-show 270
 ```
