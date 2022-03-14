@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vlc="clr-namespace:LibVLCSharp.Avalonia;assembly=LibVLCSharp.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="320" d:DesignHeight="480"
+        x:Class="AFSD.MainWindow"
+        Title="Apartment_Friendly_Smart_Door"
+        HasSystemDecorations="False"
+        Width="320"
+        Height="480">
+	<Grid>
+		<Panel Name="DebugMenu" IsVisible="True" HorizontalAlignment="Center" VerticalAlignment="Top">
+			<StackPanel>
+				<Button Name="btnCounterClockwise">
+					<TextBlock TextWrapping="Wrap">Counter Clockwise</TextBlock>
+				</Button>
+				<Button Name="btnClockwise">
+					<TextBlock>Clockwise</TextBlock>
+				</Button>
+				<Button Name="btnRotaryClick">
+					<TextBlock>Click</TextBlock>
+				</Button>
+				<Button Name="btnExit1">
+					<TextBlock>Exit</TextBlock>															
+				</Button>
+			</StackPanel>
+		</Panel>
+		<Panel Name="Panel_VideoFrame" IsVisible="true" Height="320" Width="480" VerticalAlignment="Top">
+			<vlc:VideoView Name="VLC_View" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+		</Panel>
+		<Panel IsVisible="False">
+			<Grid ShowGridLines="True">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="2*"/>
+				</Grid.ColumnDefinitions>
+				<Grid Grid.Column="0" ShowGridLines="True">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"></RowDefinition>
+						<RowDefinition Height="*"></RowDefinition>
+					</Grid.RowDefinitions>
+					
+				</Grid>
+			</Grid>
+		</Panel>
+		<Grid Background="AliceBlue" IsVisible="True" ShowGridLines="True" RowDefinitions="" Name="Panel_OnScreenInfo" Height="160" Width="320" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="2*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<TextBlock Name="TextCurrentTime" FontWeight="Bold" FontSize="22">XX:XX XM</TextBlock>
+			<Button Name="btnExit" Grid.Column="0" Grid.Row="1" >Exit</Button>
+			<Panel Name="Panel_OnScreenMenu" IsVisible="true" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+				<ListBox IsVisible="true" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="DarkGray" Opacity="0.75">
+					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5" Opacity="1">
+						<TextBlock Name="MenuPrevious">Previous</TextBlock>
+					</ListBoxItem>
+					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5">
+						<TextBlock Name="MenuCurrent">Selected</TextBlock>
+					</ListBoxItem>
+					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5">
+						<TextBlock Name="MenuNext">Next</TextBlock>
+					</ListBoxItem>
+				</ListBox>
+			</Panel>
+		</Grid>
+	</Grid>
+</Window>
