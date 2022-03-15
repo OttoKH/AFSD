@@ -20,7 +20,7 @@ sudo echo export PATH=$PATH:$HOME/dotnet >> .bashrc
 cd ~
 wget https://github.com/OttoKH/AFSD/releases/download/publish/Release.zip
 sudo mkdir -p AFSD
-sudo tar zxf Release.zip -C AFSD
+sudo unzip Release.zip -d AFSD
 ```
 ### Edit /etc/xdg/lxsession/LXDE-pi/autostart to read like the following
 ```
