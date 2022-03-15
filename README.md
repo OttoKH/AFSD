@@ -1,5 +1,7 @@
 # Apartment-Friendly-Smart-Door
 
+#### Enable Camera in raspi-config
+#### add dtoverlay=ov5647 to /boot/config.txt
 
 ```
 sudo apt update
@@ -14,6 +16,9 @@ sudo tar zxf dotnet-sdk-3.1.416-linux-arm.tar.gz -C dotnet
 sudo echo export DOTNET_ROOT=$HOME/dotnet >> .bashrc
 sudo echo export PATH=$PATH:$HOME/dotnet >> .bashrc
 ```
+
+git clone https://github.com/OttoKH/AFSD
+
 ### Edit /etc/xdg/lxsession/LXDE-pi/autostart to read like the following
 ```
 #@lxpanel --profile LXDE-pi
