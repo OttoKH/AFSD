@@ -16,9 +16,12 @@ sudo tar zxf dotnet-sdk-3.1.416-linux-arm.tar.gz -C dotnet
 sudo echo export DOTNET_ROOT=$HOME/dotnet >> .bashrc
 sudo echo export PATH=$PATH:$HOME/dotnet >> .bashrc
 ```
-
-git clone https://github.com/OttoKH/AFSD
-
+```
+cd ~
+wget https://github.com/OttoKH/AFSD/releases/download/publish/Release.zip
+sudo mkdir -p AFSD
+sudo tar zxf Release.zip -C AFSD
+```
 ### Edit /etc/xdg/lxsession/LXDE-pi/autostart to read like the following
 ```
 #@lxpanel --profile LXDE-pi
