@@ -30,6 +30,17 @@ sudo unzip Release.zip -d AFSD
 @unclutter -idle 0
 @sudo /bin/bash /home/pi/AFSD/Run_On_Boot.sh
 ```
+### Create /lib/systemd/system/AFSD_Stream.service and write the following
+```
+[Unit]
+Description=Manages the video stream
+After=multi-user.target
+[Service]
+ExecStart=/bin/bash /home/pi/AFSD/Start_Video_Stream.sh
+User=pi
+[Install]
+WantedBy=multi-user.target
+```
 ```
 cd ~
 sudo rm -rf LCD-show
