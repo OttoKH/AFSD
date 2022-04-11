@@ -5,7 +5,7 @@
 
 ```
 sudo apt update
-sudo apt install -y unclutter libx11-dev libvlc-dev
+sudo apt install -y unclutter libx11-dev libvlc-dev libgdiplus
 sudo rm /etc/xdg/lxsession/LXDE-pi/sshpwd.sh
 ```
 ```
