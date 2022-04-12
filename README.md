@@ -45,6 +45,11 @@ User=pi
 [Install]
 WantedBy=multi-user.target
 ```
+### Then Enable the service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable AFSD_Stream.service 
+```
 ```
 cd ~
 sudo rm -rf LCD-show
