@@ -1,10 +1,5 @@
 # Apartment-Friendly-Smart-Door
 
-#### Enable Camera in raspi-config
-```
-sudo raspi-config nonint do_camera 1
-```
-
 #### add dtoverlay=ov5647 to /boot/config.txt
 
 ```
@@ -57,4 +52,9 @@ git clone https://github.com/goodtft/LCD-show.git
 sudo chmod -R 755 LCD-show
 cd LCD-show/
 sudo ./MPI3508-show 270
+```
+
+#### Enable Camera in raspi-config
+```
+sudo raspi-config nonint do_camera 1
 ```
