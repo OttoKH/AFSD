@@ -10,39 +10,19 @@
         Width="320"
         Height="480">
 	<Grid>
-		<Panel Name="DebugMenu" IsVisible="True" HorizontalAlignment="Center" VerticalAlignment="Top">
-			<StackPanel>
-				<Button Name="btnCounterClockwise">
-					<TextBlock TextWrapping="Wrap">Counter Clockwise</TextBlock>
-				</Button>
-				<Button Name="btnClockwise">
-					<TextBlock>Clockwise</TextBlock>
-				</Button>
-				<Button Name="btnRotaryClick">
-					<TextBlock>Click</TextBlock>
-				</Button>
-				<Button Name="btnExit1">
-					<TextBlock>Exit</TextBlock>															
-				</Button>
-			</StackPanel>
-		</Panel>
-		<Panel Name="Panel_VideoFrame" IsVisible="true" Height="320" Width="480" VerticalAlignment="Top">
+		<Grid Name="DebugMenu" ShowGridLines="True" IsVisible="False">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<TextBlock Name="DebugGPIO" FontSize="8" Grid.Column="0" Background="WhiteSmoke" Margin="4"></TextBlock>
+			<TextBlock Name="DebugSettings" FontSize="8" Grid.Column="1" Background="WhiteSmoke" Margin="4" Padding="2">asdfASD\</TextBlock>
+		</Grid>
+		<Panel Name="Panel_VideoFrame" IsVisible="true" Height="320" Width="320" VerticalAlignment="Top">
 			<vlc:VideoView Name="VLC_View" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-		</Panel>
-		<Panel IsVisible="False">
-			<Grid ShowGridLines="True">
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"/>
-					<ColumnDefinition Width="2*"/>
-				</Grid.ColumnDefinitions>
-				<Grid Grid.Column="0" ShowGridLines="True">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="*"></RowDefinition>
-						<RowDefinition Height="*"></RowDefinition>
-					</Grid.RowDefinitions>
-					
-				</Grid>
-			</Grid>
 		</Panel>
 		<Grid Background="AliceBlue" IsVisible="True" ShowGridLines="True" RowDefinitions="" Name="Panel_OnScreenInfo" Height="160" Width="320" VerticalAlignment="Bottom" HorizontalAlignment="Center">
 			<Grid.ColumnDefinitions>
@@ -54,17 +34,38 @@
 				<RowDefinition Height="*"></RowDefinition>
 			</Grid.RowDefinitions>
 			<TextBlock Name="TextCurrentTime" FontWeight="Bold" FontSize="22">XX:XX XM</TextBlock>
-			<Button Name="btnExit" Grid.Column="0" Grid.Row="1" >Exit</Button>
+			<Grid ShowGridLines="True" Grid.Column="0" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Button Name="btnCounterClockwise" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+					<TextBlock TextWrapping="Wrap">CC</TextBlock>
+				</Button>
+				<Button Name="btnClockwise" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+					<TextBlock>C</TextBlock>
+				</Button>
+				<Button Name="btnRotaryClick" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+					<TextBlock>CL</TextBlock>
+				</Button>
+				<Button Name="btnExit" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+					<TextBlock>Exit</TextBlock>
+				</Button>
+			</Grid>
 			<Panel Name="Panel_OnScreenMenu" IsVisible="true" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-				<ListBox IsVisible="true" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="DarkGray" Opacity="0.75">
-					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5" Opacity="1">
-						<TextBlock Name="MenuPrevious">Previous</TextBlock>
+				<ListBox IsVisible="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="DarkGray">
+					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5">
+						<TextBlock Name="MenuOptionTop">Top</TextBlock>
 					</ListBoxItem>
 					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5">
-						<TextBlock Name="MenuCurrent">Selected</TextBlock>
+						<TextBlock Name="MenuOptionMiddle">Middle</TextBlock>
 					</ListBoxItem>
-					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5">
-						<TextBlock Name="MenuNext">Next</TextBlock>
+					<ListBoxItem Background="BlanchedAlmond" Margin="4" CornerRadius="5" >
+						<TextBlock Name="MenuOptionBottom">Bottom</TextBlock>
 					</ListBoxItem>
 				</ListBox>
 			</Panel>
