@@ -17,7 +17,7 @@ sudo echo export PATH=$PATH:$HOME/dotnet >> .bashrc
 ```
 ```
 cd ~
-wget https://github.com/OttoKH/AFSD/releases/download/publish/Release.zip
+wget https://github.com/OttoKH/AFSD/releases/download/Current/Release.zip
 sudo mkdir -p AFSD
 sudo unzip Release.zip -d AFSD
 ```
