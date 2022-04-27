@@ -54,7 +54,7 @@ cd LCD-show/
 sudo ./MPI3508-show 270
 ```
 
-#### Enable Camera in raspi-config
+#### Enable Camera in boot/config.txt
 ```
-sudo raspi-config nonint do_camera 1
+dtoverlay=ov5647
 ```
